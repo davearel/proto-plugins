@@ -1,0 +1,32 @@
+# A Proto TOML plugin for x.com's xurl cli:
+# https://moonrepo.dev/docs/proto/plugins#toml-plugin
+
+name = "xurl"
+type = "cli"
+
+[platform.linux]
+exe-path = "xurl_Linux_{arch}"
+download-file = "xurl_Linux_{arch}.tar.gz"
+checksum-file = "xurl_{version}_checksums.txt"
+
+[platform.macos]
+exe-path = "xurl_darwin_{arch}"
+download-file = "xurl_darwin_{arch}.tar.gz"
+checksum-file = "xurl_{version}_checksums.txt"
+
+[platform.windows]
+exe-path = "xurl_Windows_{arch}"
+download-file = "xurl_Windows_{arch}.zip"
+checksum-file = "xurl_{version}_checksums.txt"
+
+[install]
+download-url = "https://github.com/xdevplatform/xurl/releases/download/v{version}/{download_file}"
+checksum-url = "https://github.com/xdevplatform/xurl/releases/download/{version}/{checksum_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "x86_64"
+i686 = "i386"
+
+[resolve]
+git-url = "https://github.com/xdevplatform/xurl"
