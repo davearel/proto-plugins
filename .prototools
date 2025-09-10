@@ -1,0 +1,4 @@
+xurl = "0.5.0"
+
+[plugins]
+xurl = "source:xurl/plugin.toml"
